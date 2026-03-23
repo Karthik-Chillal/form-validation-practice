@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="title">Form Validation:</h1>
+    <form action="" novalidate>
+      <!-- this is for taking email as input from the user  -->
+      <div id="field-email">
+        <div class="email">
+          <label for="user-email">Email: </label>
+          <input type="email" id="email" required autocomplete="off" />
+        </div>
+
+        <span class="error-msg" id="email-error"></span>
+      </div>
+      <!-- ---------------------------------------------------------------------------  -->
+
+      <!-- This is a drop down to select a desired country  -->
+      <div class="" id="field-country">
+        <div>
+          <label for="user-country">Country: </label>
+          <select name="country" id="country" required>
+            <option value="none">-- None --</option>
+            <option value="Australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="china">China</option>
+            <option value="england">England</option>
+            <option value="india">India</option>
+            <option value="japan">Japan</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+        <span class="error-msg" id="country-error"></span>
+      </div>
+      <!-- ---------------------------------------------------------------------------  -->
+
+      <!-- this is input for postal code, which i implement using the pattern feature -->
+      <div id="field-postal">
+        <div class="">
+          <label for="user-postal-code">Postal-Code: </label>
+          <input
+            type="text"
+            placeholder="XXXXXX"
+            required
+            pattern="[A-Za-z0-9 \-]{3,10}"
+            id="postal"
+          />
+        </div>
+        <span class="error-msg" id="postal-error"></span>
+      </div>
+
+      <div class="" id="field-password">
+        <div>
+          <label for="user-pass">Password: </label>
+          <input type="password" id="password" required />
+        </div>
+        <span class="error-msg" id="password-error"></span>
+      </div>
+
+      <div id="field-confirm">
+        <div class="">
+          <label for="pass-confirm">Confirm Password: </label>
+          <input type="password" id="confirm" required />
+        </div>
+        <span class="error-msg" id="confirm-error"></span>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
