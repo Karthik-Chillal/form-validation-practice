@@ -1,14 +1,15 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
   color: white;
   background-color: black;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }

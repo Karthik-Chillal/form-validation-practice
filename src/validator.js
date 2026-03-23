@@ -36,14 +36,16 @@ export const getError = (name, input) => {
 
 export const validate = (name) => {
   const { el, err, wrap } = fields[name];
-  if (name == 'confirm') {
+  if (name === 'confirm') {
     const pw = fields['password'].el.value;
     el.setCustomValidity(el.value !== pw ? "Passwords don't match" : '');
+  }
+  if (name === 'country') {
+    el.setCustomValidity(el.value === 'none' ? 'Select a Country' : '');
   }
   console.log({ err });
   const msg = getError(name, el);
   err.textContent = msg;
-  console.log({ err });
 
   wrap.classList.toggle('valid', el.validity.valid);
   wrap.classList.toggle('invalid', !el.validity.valid);
