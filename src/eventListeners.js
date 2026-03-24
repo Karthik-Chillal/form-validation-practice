@@ -16,11 +16,6 @@ Object.keys(fields).forEach((name) => {
   //   }
   // };
 
-  el.addEventListener('focus', () => {
-    wrap.classList.add('touched');
-    console.log(wrap.classList);
-  });
-
   // Add blur event listener to mark field as touched
   el.addEventListener('blur', () => {
     validate(name);
@@ -29,6 +24,9 @@ Object.keys(fields).forEach((name) => {
 
   // Add input event listener to validate if field is already touched
   el.addEventListener('input', () => {
+    if (!wrap.classList.contains('touched')) {
+      wrap.classList.add('touched');
+    }
     console.log('input fired', name);
     validate(name);
     console.log(validate(name));
