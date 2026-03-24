@@ -44,7 +44,7 @@ export const getError = (name, input) => {
 // Function to validate a specific field and update UI accordingly
 export const validate = (name) => {
   const { el, err, wrap } = fields[name];
-
+  console.log(name, el.validity.valid, el.value);
   // Special validation for confirm password: check if it matches password
   if (name === 'confirm') {
     const pw = fields['password'].el.value;

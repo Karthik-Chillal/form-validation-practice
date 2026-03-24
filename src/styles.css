@@ -32,6 +32,23 @@ form > div > div {
   flex-direction: column;
 }
 
+.touched input:valid {
+  border: solid 2px greenyellow;
+}
+.touched select:valid {
+  border: solid 2px greenyellow;
+}
+.touched input:invalid {
+  border: solid 2px red;
+}
+.touched select:invalid {
+  border: solid 2px red;
+}
+input,
+select {
+  outline: none;
+  border: 2px solid transparent; /* default state — no color */
+}
 /* Error message styling: red color */
 .error-msg {
   color: red;
