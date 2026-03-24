@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- HTML template for the form validation practice page -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +9,7 @@
   <body>
     <h1 class="title">Form Validation:</h1>
     <form action="" novalidate>
-      <!-- this is for taking email as input from the user  -->
+      <!-- Email input field with label and error display -->
       <div id="field-email">
         <div class="email">
           <label for="user-email">Email: </label>
@@ -19,7 +20,7 @@
       </div>
       <!-- ---------------------------------------------------------------------------  -->
 
-      <!-- This is a drop down to select a desired country  -->
+      <!-- Country selection dropdown with options -->
       <div class="" id="field-country">
         <div>
           <label for="user-country">Country: </label>
@@ -38,7 +39,7 @@
       </div>
       <!-- ---------------------------------------------------------------------------  -->
 
-      <!-- this is input for postal code, which i implement using the pattern feature -->
+      <!-- Postal code input with pattern validation -->
       <div id="field-postal">
         <div class="">
           <label for="user-postal-code">Postal-Code: </label>
@@ -53,6 +54,7 @@
         <span class="error-msg" id="postal-error"></span>
       </div>
 
+      <!-- Password input field -->
       <div class="" id="field-password">
         <div>
           <label for="user-pass">Password: </label>
@@ -61,6 +63,7 @@
         <span class="error-msg" id="password-error"></span>
       </div>
 
+      <!-- Confirm password input field -->
       <div id="field-confirm">
         <div class="">
           <label for="pass-confirm">Confirm Password: </label>
@@ -69,6 +72,7 @@
         <span class="error-msg" id="confirm-error"></span>
       </div>
 
+      <!-- Submit button -->
       <button type="submit">Submit</button>
     </form>
   </body>

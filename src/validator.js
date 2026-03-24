@@ -1,12 +1,19 @@
+// Validation module for form fields
+// Contains functions to get error messages and perform validation
+
 import { fields } from './field-config.js';
 
+// Function to get error message based on field name and input validity
 export const getError = (name, input) => {
   const v = input.validity;
 
+  // If input is valid, return empty string
   if (v.valid) return '';
 
+  // If custom error is set, return the custom message
   if (v.customError) return input.validationMessage;
 
+  // Switch based on field name to provide specific error messages
   switch (name) {
     case 'email':
       if (v.valueMissing) return 'Email is required';
@@ -34,21 +41,32 @@ export const getError = (name, input) => {
   }
 };
 
+// Function to validate a specific field and update UI accordingly
 export const validate = (name) => {
   const { el, err, wrap } = fields[name];
+
+  // Special validation for confirm password: check if it matches password
   if (name === 'confirm') {
     const pw = fields['password'].el.value;
     el.setCustomValidity(el.value !== pw ? "Passwords don't match" : '');
   }
+
+  // Special validation for country: ensure not 'none'
   if (name === 'country') {
     el.setCustomValidity(el.value === 'none' ? 'Select a Country' : '');
   }
+
+  // Debug log for error element
   console.log({ err });
+
+  // Get error message and set it in the error span
   const msg = getError(name, el);
   err.textContent = msg;
 
+  // Toggle CSS classes based on validity
   wrap.classList.toggle('valid', el.validity.valid);
   wrap.classList.toggle('invalid', !el.validity.valid);
 
+  // Return the validity status
   return el.validity.valid;
 };

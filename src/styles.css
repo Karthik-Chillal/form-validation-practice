@@ -1,15 +1,38 @@
+/* Global reset for padding, margin, and box-sizing */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+/* Body styling: white text on black background */
 body {
   color: white;
   background-color: black;
 }
 
+/* Form styling: flexbox layout for form elements */
 form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 500px;
+  height: 600px;
+  padding: 40px;
+}
+
+/* Margin for form divs */
+form > div {
+  margin: 10px 0px;
+}
+
+/* Flex column for inner divs in form fields */
+form > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Error message styling: red color */
+.error-msg {
+  color: red;
 }
