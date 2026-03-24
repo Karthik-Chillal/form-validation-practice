@@ -56,9 +56,6 @@ export const validate = (name) => {
     el.setCustomValidity(el.value === 'none' ? 'Select a Country' : '');
   }
 
-  // Debug log for error element
-  console.log({ err });
-
   // Get error message and set it in the error span
   const msg = getError(name, el);
   err.textContent = msg;

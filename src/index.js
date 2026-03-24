@@ -3,3 +3,4 @@
 
 import './styles.css';
 import './eventListeners.js';
+import './submit.js';

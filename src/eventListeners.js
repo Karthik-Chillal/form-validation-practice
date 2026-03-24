@@ -4,9 +4,6 @@
 import { fields } from './field-config.js';
 import { validate } from './validator.js';
 
-// Log the fields configuration for debugging
-console.log(fields);
-
 // Iterate over each field name to attach event listeners
 Object.keys(fields).forEach((name) => {
   const { el, wrap } = fields[name];
@@ -16,8 +13,6 @@ Object.keys(fields).forEach((name) => {
     if (!wrap.classList.contains('touched')) {
       wrap.classList.add('touched');
       validate(name);
-      console.log(validate(name));
-      console.log('touched');
     }
   };
 
@@ -27,6 +22,5 @@ Object.keys(fields).forEach((name) => {
   // Add input event listener to validate if field is already touched
   el.addEventListener('input', () => {
     if (wrap.classList.contains('touched')) validate(name);
-    console.log(validate(name));
   });
 });
